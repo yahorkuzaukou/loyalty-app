@@ -2,12 +2,10 @@ package handlers
 
 import "github.com/gofiber/fiber/v2"
 
-func HealthHandler(c *fiber.Ctx) error {
+func healthHandler(c *fiber.Ctx) error {
 	return c.SendString("Hello, World!")
 }
 
-func GetHealthHandlers() []func(c *fiber.Ctx) error {
-	return []func(c *fiber.Ctx) error{
-		HealthHandler,
-	}
+func SetupHealthHandlers(group fiber.Router) {
+	group.Get("/", healthHandler)
 }
