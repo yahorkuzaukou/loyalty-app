@@ -26,3 +26,6 @@ go.work.sum
 
 # binary file
 loyalty-app
+
+# db files
+pgdata
